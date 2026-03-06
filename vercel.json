@@ -1,0 +1,7 @@
+{
+  "buildCommand": "NEXT_DISABLE_TURBOPACK=1 next build",
+  "env": {
+    "NEXT_DISABLE_TURBOPACK": "1",
+    "NEXT_PUBLIC_WC_PROJECT_ID": "81d76f858a995a94366bee73c129eccc"
+  }
+}
