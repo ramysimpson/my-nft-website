@@ -1076,6 +1076,7 @@ export default function Home() {
             height: auto;
             gap: 0.3rem;
             margin-bottom: 32px;
+            min-height: 620px;
           }
           .cards-grid {
             justify-content: center;
@@ -1093,8 +1094,7 @@ export default function Home() {
           .art-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            flex: 0 0 82%;
-            max-height: 70vh;
+            flex: 0 0 auto;
             overflow: hidden;
           }
           .art-image-container .art-card__img {
@@ -1104,9 +1104,9 @@ export default function Home() {
             border-radius: 12px;
           }
           .art-card-body {
-            flex: 0 0 24%;
-            min-height: 140px;
-            padding: 6px 0 6px 0;
+            flex: 0 0 auto;
+            min-height: 0;
+            padding: 6px 0 8px 0;
             gap: 4px !important;
             overflow: visible;
           }
