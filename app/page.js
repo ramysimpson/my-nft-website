@@ -1075,8 +1075,9 @@ export default function Home() {
             max-width: 100%;
             height: auto;
             gap: 0.3rem;
-            margin-bottom: 32px;
-            min-height: 620px;
+            margin-bottom: 28px;
+            min-height: auto;
+            padding-bottom: 12px !important;
           }
           .cards-grid {
             justify-content: center;
