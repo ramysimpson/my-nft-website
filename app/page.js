@@ -1081,14 +1081,14 @@ export default function Home() {
             justify-content: center;
           }
           .art-card button {
-            padding: 9px 16px;
-            font-size: 12px;
+            padding: 8px 14px;
+            font-size: 8px;
           }
           .art-card__title {
-            font-size: 16px;
+            font-size: 12px;
           }
           .art-card__desc {
-            font-size: 12px;
+            font-size: 10px;
           }
           .art-image-container {
             width: 100%;
