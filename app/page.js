@@ -489,12 +489,13 @@ export default function Home() {
           <p className="art-card__desc" style={{ fontSize: "0.9rem", opacity: 0.85, margin: 0 }}>
             {piece.description}
           </p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.45rem",
-              marginTop: "auto",
+        <div
+          className="cta-stack"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.45rem",
+            marginTop: "auto",
             }}
           >
             <button
@@ -1070,7 +1071,7 @@ export default function Home() {
           .art-card {
             flex: 1 1 100% !important;
             max-width: 100%;
-            height: 420px;
+            height: auto;
             gap: 0.4rem;
             margin-bottom: 32px;
           }
@@ -1087,7 +1088,7 @@ export default function Home() {
           .art-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            flex: 0 0 78%;
+            flex: 0 0 auto;
             overflow: hidden;
           }
           .art-image-container .art-card__img {
@@ -1096,10 +1097,13 @@ export default function Home() {
             object-fit: cover;
           }
           .art-card-body {
-            flex: 0 0 22%;
+            flex: 1 1 auto;
             padding: 8px 0 6px 0;
             gap: 6px !important;
             overflow: visible;
+          }
+          .cta-stack {
+            margin-top: 0 !important;
           }
           .art-card__img {
             height: 220px;
