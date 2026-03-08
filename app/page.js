@@ -1081,14 +1081,14 @@ export default function Home() {
             justify-content: center;
           }
           .art-card button {
-            padding: 10px 18px;
-            font-size: 12.5px;
+            padding: 9px 16px;
+            font-size: 12px;
           }
           .art-card__title {
-            font-size: 18px;
+            font-size: 16px;
           }
           .art-card__desc {
-            font-size: 13px;
+            font-size: 12px;
           }
           .art-image-container {
             width: 100%;
@@ -1104,10 +1104,10 @@ export default function Home() {
             border-radius: 12px;
           }
           .art-card-body {
-            flex: 0 0 22%;
-            min-height: 130px;
-            padding: 6px 0 8px 0;
-            gap: 5px !important;
+            flex: 0 0 24%;
+            min-height: 140px;
+            padding: 6px 0 6px 0;
+            gap: 4px !important;
             overflow: visible;
           }
           .cta-stack {
