@@ -1087,7 +1087,7 @@ export default function Home() {
           .art-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            flex: 0 0 80%;
+            flex: 0 0 78%;
             overflow: hidden;
           }
           .art-image-container .art-card__img {
@@ -1096,10 +1096,10 @@ export default function Home() {
             object-fit: cover;
           }
           .art-card-body {
-            flex: 0 0 20%;
-            padding: 10px 0 8px 0;
-            gap: 8px !important;
-            overflow: hidden;
+            flex: 0 0 22%;
+            padding: 8px 0 6px 0;
+            gap: 6px !important;
+            overflow: visible;
           }
           .art-card__img {
             height: 220px;
