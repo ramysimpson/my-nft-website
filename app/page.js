@@ -562,6 +562,7 @@ export default function Home() {
         </p>
       )}
       <div
+        className="cards-grid"
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -1076,6 +1077,9 @@ export default function Home() {
             gap: 0.4rem;
             margin-bottom: 32px;
           }
+          .cards-grid {
+            justify-content: center;
+          }
           .art-card button {
             padding: 11px 20px;
             font-size: 13px;
@@ -1089,7 +1093,8 @@ export default function Home() {
           .art-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            flex: 0 0 auto;
+            flex: 0 0 82%;
+            max-height: 70vh;
             overflow: hidden;
           }
           .art-image-container .art-card__img {
@@ -1099,7 +1104,8 @@ export default function Home() {
             border-radius: 12px;
           }
           .art-card-body {
-            flex: 1 1 auto;
+            flex: 0 0 18%;
+            min-height: 110px;
             padding: 8px 0 6px 0;
             gap: 6px !important;
             overflow: visible;
