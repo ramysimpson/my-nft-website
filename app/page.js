@@ -1036,6 +1036,24 @@ export default function Home() {
       </footer>
 
       <style jsx global>{`
+        /* Gallery chips (body section) */
+        .gallery-chip {
+          background: linear-gradient(135deg, rgba(86,86,130,0.18), rgba(120,118,255,0.25)) !important;
+          border: 1px solid rgba(120, 118, 255, 0.35) !important;
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), 0 0 18px rgba(120, 118, 255, 0.28) !important;
+          color: #f5f5ff !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.01em;
+          padding: 0.45rem 0.85rem !important;
+          transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+        }
+        .gallery-chip:hover,
+        .gallery-chip:focus-visible {
+          transform: translateY(-1px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45), 0 0 22px rgba(120, 118, 255, 0.36) !important;
+          outline: none;
+        }
+
         @media (max-width: 768px) {
           .header-inner {
             max-width: 100%;
