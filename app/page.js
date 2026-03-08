@@ -510,15 +510,16 @@ export default function Home() {
             >
               Mint (Coming Soon)
             </button>
-            <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
-              {["OpenSea", "Etherscan"].map((platform) => (
-                <button
-                  key={platform}
-                  type="button"
-                  aria-disabled="true"
-                  title={`${platform} link coming soon`}
-                  style={{
-                    ...buttonBase,
+          <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
+            {["OpenSea", "Etherscan"].map((platform) => (
+              <button
+                key={platform}
+                className="secondary-links"
+                type="button"
+                aria-disabled="true"
+                title={`${platform} link coming soon`}
+                style={{
+                  ...buttonBase,
                     cursor: "not-allowed",
                     opacity: 0.55,
                     background: "#0f0f18",
@@ -1076,14 +1077,14 @@ export default function Home() {
             margin-bottom: 32px;
           }
           .art-card button {
-            padding: 12px 22px;
-            font-size: 14px;
+            padding: 11px 20px;
+            font-size: 13px;
           }
           .art-card__title {
-            font-size: 22px;
+            font-size: 20px;
           }
           .art-card__desc {
-            font-size: 15px;
+            font-size: 14px;
           }
           .art-image-container {
             width: 100%;
@@ -1095,6 +1096,7 @@ export default function Home() {
             width: 100% !important;
             height: 100% !important;
             object-fit: cover;
+            border-radius: 12px;
           }
           .art-card-body {
             flex: 1 1 auto;
@@ -1104,6 +1106,9 @@ export default function Home() {
           }
           .cta-stack {
             margin-top: 0 !important;
+          }
+          .secondary-links {
+            display: none !important;
           }
           .art-card__img {
             height: 220px;
