@@ -432,8 +432,8 @@ export default function Home() {
         padding: "1rem",
         boxShadow:
           hoveredCard === piece.title
-            ? "0 20px 35px rgba(0, 0, 0, 0.55)"
-            : "0 0 25px rgba(0, 0, 0, 0.45)",
+            ? "0 24px 60px rgba(0,0,0,0.6), 0 0 60px rgba(120,120,255,0.25)"
+            : "0 16px 45px rgba(0,0,0,0.55), 0 0 50px rgba(120,120,255,0.18)",
         border:
           hoveredCard === piece.title
             ? "1px solid #5b55f0"
@@ -477,7 +477,8 @@ export default function Home() {
               height: "190px",
               borderRadius: "10px",
               objectFit: "cover",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.35)",
+              boxShadow:
+                "0 20px 60px rgba(0,0,0,0.6), 0 0 60px rgba(120,120,255,0.15)",
             }}
           />
         </div>
@@ -1086,7 +1087,7 @@ export default function Home() {
           .art-image-container {
             width: 100%;
             aspect-ratio: 1 / 1;
-            flex: 0 0 78%;
+            flex: 0 0 80%;
             overflow: hidden;
           }
           .art-image-container .art-card__img {
@@ -1095,9 +1096,10 @@ export default function Home() {
             object-fit: cover;
           }
           .art-card-body {
-            flex: 0 0 22%;
-            padding: 10px 0 6px 0;
-            gap: 6px !important;
+            flex: 0 0 20%;
+            padding: 10px 0 8px 0;
+            gap: 8px !important;
+            overflow: hidden;
           }
           .art-card__img {
             height: 220px;
