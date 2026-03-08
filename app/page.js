@@ -467,59 +467,65 @@ export default function Home() {
           gap: "0.6rem",
         }}
       >
-        <img
-          className="art-card__img"
-          src={piece.image}
-          alt={piece.title}
-          style={{
-            width: "100%",
-            height: "190px",
-            borderRadius: "10px",
-            objectFit: "cover",
-            boxShadow: "0 10px 25px rgba(0,0,0,0.35)",
-          }}
-        />
-        <h3 style={{ fontSize: "1.1rem", margin: 0 }}>{piece.title}</h3>
-        <p style={{ fontSize: "0.9rem", opacity: 0.85, margin: 0 }}>
-          {piece.description}
-        </p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.45rem",
-            marginTop: "auto",
-          }}
-        >
-          <button
-            type="button"
-            onClick={() => setComingSoonPiece(piece.title)}
+        <div className="art-image-container">
+          <img
+            className="art-card__img"
+            src={piece.image}
+            alt={piece.title}
             style={{
-              ...buttonBase,
-              background: "#4f46e5",
-              border: "1px solid #5b55f0",
-              boxShadow: "0 10px 25px rgba(79,70,229,0.35)",
+              width: "100%",
+              height: "190px",
+              borderRadius: "10px",
+              objectFit: "cover",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.35)",
+            }}
+          />
+        </div>
+        <div className="art-card-body" style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+          <h3 className="art-card__title" style={{ fontSize: "1.1rem", margin: 0 }}>
+            {piece.title}
+          </h3>
+          <p className="art-card__desc" style={{ fontSize: "0.9rem", opacity: 0.85, margin: 0 }}>
+            {piece.description}
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.45rem",
+              marginTop: "auto",
             }}
           >
-            Mint (Coming Soon)
-          </button>
-          <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
-            {["OpenSea", "Etherscan"].map((platform) => (
-              <button
-                key={platform}
-                type="button"
-                aria-disabled="true"
-                title={`${platform} link coming soon`}
-                style={{
-                  ...buttonBase,
-                  cursor: "not-allowed",
-                  opacity: 0.55,
-                  background: "#0f0f18",
-                }}
-              >
-                View on {platform} (Coming Soon)
-              </button>
-            ))}
+            <button
+              type="button"
+              onClick={() => setComingSoonPiece(piece.title)}
+              style={{
+                ...buttonBase,
+                background: "#4f46e5",
+                border: "1px solid #5b55f0",
+                boxShadow: "0 10px 25px rgba(79,70,229,0.35)",
+              }}
+            >
+              Mint (Coming Soon)
+            </button>
+            <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
+              {["OpenSea", "Etherscan"].map((platform) => (
+                <button
+                  key={platform}
+                  type="button"
+                  aria-disabled="true"
+                  title={`${platform} link coming soon`}
+                  style={{
+                    ...buttonBase,
+                    cursor: "not-allowed",
+                    opacity: 0.55,
+                    background: "#0f0f18",
+                  }}
+                >
+                  View on {platform} (Coming Soon)
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -1027,7 +1033,11 @@ export default function Home() {
       <style jsx global>{`
         @media (max-width: 768px) {
           .header-inner {
-            padding: 0.9rem 1rem;
+            max-width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 0.9rem;
+            padding-bottom: 0.9rem;
           }
           .top-nav {
             gap: 0.9rem;
@@ -1036,7 +1046,11 @@ export default function Home() {
             justify-content: space-between;
           }
           main {
-            padding: 1.5rem 1rem 3rem !important;
+            max-width: 100%;
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            padding-top: 1.5rem !important;
+            padding-bottom: 3rem !important;
           }
           section#hero h1 {
             font-size: 2.2rem;
@@ -1055,6 +1069,35 @@ export default function Home() {
           .art-card {
             flex: 1 1 100% !important;
             max-width: 100%;
+            height: 420px;
+            gap: 0.4rem;
+            margin-bottom: 32px;
+          }
+          .art-card button {
+            padding: 12px 22px;
+            font-size: 14px;
+          }
+          .art-card__title {
+            font-size: 22px;
+          }
+          .art-card__desc {
+            font-size: 15px;
+          }
+          .art-image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            flex: 0 0 78%;
+            overflow: hidden;
+          }
+          .art-image-container .art-card__img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+          }
+          .art-card-body {
+            flex: 0 0 22%;
+            padding: 10px 0 6px 0;
+            gap: 6px !important;
           }
           .art-card__img {
             height: 220px;
