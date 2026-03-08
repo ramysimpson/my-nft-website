@@ -419,6 +419,7 @@ export default function Home() {
   const renderCard = (piece) => (
     <div
       key={piece.title}
+      className="art-card"
       onMouseEnter={() => setHoveredCard(piece.title)}
       onMouseLeave={() => setHoveredCard(null)}
       style={{
@@ -467,6 +468,7 @@ export default function Home() {
         }}
       >
         <img
+          className="art-card__img"
           src={piece.image}
           alt={piece.title}
           style={{
@@ -706,6 +708,7 @@ export default function Home() {
         }}
       >
         <div
+          className="header-inner"
           style={{
             maxWidth: "960px",
             margin: "0 auto",
@@ -721,6 +724,7 @@ export default function Home() {
           </div>
 
           <nav
+            className="top-nav"
             style={{
               display: "flex",
               gap: "1.5rem",
@@ -784,6 +788,7 @@ export default function Home() {
                   {navLinks.map((link) => (
                     <a
                       key={link.id}
+                      className="dropdown-link"
                       href={link.href}
                       style={{
                         display: "block",
@@ -907,6 +912,7 @@ export default function Home() {
               {navLinks.map((link) => (
                 <a
                   key={link.id}
+                  className="chip-link"
                   href={link.href}
                   style={{
                     textDecoration: "none",
@@ -1017,6 +1023,56 @@ export default function Home() {
       >
         © {new Date().getFullYear()} Ramé Delaireaux Art. All rights reserved.
       </footer>
+
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          .header-inner {
+            padding: 0.9rem 1rem;
+          }
+          .top-nav {
+            gap: 0.9rem;
+            font-size: 0.9rem;
+            width: 100%;
+            justify-content: space-between;
+          }
+          main {
+            padding: 1.5rem 1rem 3rem !important;
+          }
+          section#hero h1 {
+            font-size: 2.2rem;
+          }
+          section#hero p {
+            font-size: 1rem;
+          }
+          section#gallery .chip-link {
+            font-size: 0.85rem;
+            padding: 0.35rem 0.6rem;
+          }
+          .dropdown-link {
+            padding: 0.55rem 0.85rem;
+            font-size: 0.9rem;
+          }
+          .art-card {
+            flex: 1 1 100% !important;
+            max-width: 100%;
+          }
+          .art-card__img {
+            height: 220px;
+          }
+        }
+
+        @media (max-width: 540px) {
+          .top-nav {
+            gap: 0.65rem;
+          }
+          section#hero h1 {
+            font-size: 2rem;
+          }
+          .art-card__img {
+            height: 190px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
