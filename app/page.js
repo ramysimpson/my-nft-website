@@ -1074,21 +1074,21 @@ export default function Home() {
             flex: 1 1 100% !important;
             max-width: 100%;
             height: auto;
-            gap: 0.4rem;
+            gap: 0.3rem;
             margin-bottom: 32px;
           }
           .cards-grid {
             justify-content: center;
           }
           .art-card button {
-            padding: 11px 20px;
-            font-size: 13px;
+            padding: 10px 18px;
+            font-size: 12.5px;
           }
           .art-card__title {
-            font-size: 20px;
+            font-size: 18px;
           }
           .art-card__desc {
-            font-size: 14px;
+            font-size: 13px;
           }
           .art-image-container {
             width: 100%;
@@ -1104,10 +1104,10 @@ export default function Home() {
             border-radius: 12px;
           }
           .art-card-body {
-            flex: 0 0 18%;
-            min-height: 110px;
-            padding: 8px 0 6px 0;
-            gap: 6px !important;
+            flex: 0 0 22%;
+            min-height: 130px;
+            padding: 6px 0 8px 0;
+            gap: 5px !important;
             overflow: visible;
           }
           .cta-stack {
