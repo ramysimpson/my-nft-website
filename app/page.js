@@ -909,6 +909,7 @@ export default function Home() {
           >
             <h2 style={{ fontSize: "1.9rem", margin: 0 }}>Gallery</h2>
             <div
+              className="gallery-chips"
               style={{
                 display: "flex",
                 gap: "0.4rem",
@@ -922,7 +923,7 @@ export default function Home() {
               {navLinks.map((link) => (
                 <a
                   key={link.id}
-                  className="chip-link"
+                  className="chip-link gallery-chip"
                   href={link.href}
                   style={{
                     textDecoration: "none",
@@ -1065,6 +1066,19 @@ export default function Home() {
           section#gallery .chip-link {
             font-size: 0.85rem;
             padding: 0.35rem 0.6rem;
+          }
+          .gallery-chips {
+            opacity: 1 !important;
+            transform: none !important;
+            flex-wrap: wrap;
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+            width: 100%;
+          }
+          .gallery-chip {
+            width: 100%;
+            text-align: center;
           }
           .dropdown-link {
             padding: 0.55rem 0.85rem;
