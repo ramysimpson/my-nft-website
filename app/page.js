@@ -1264,6 +1264,22 @@ export default function Home() {
             transform: translateY(-50%) translateX(0);
           }
         }
+
+        /* Brand wordmark in header */
+        .brand-title {
+          font-size: 1.08rem;
+          letter-spacing: 0.08em;
+          background: linear-gradient(120deg, #f7f7ff 0%, #9fb1ff 45%, #c4a5ff 90%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+        }
+        @media (max-width: 768px) {
+          .brand-title {
+            font-size: 1.15rem;
+            text-align: center;
+          }
+        }
       `}</style>
     </div>
   );
