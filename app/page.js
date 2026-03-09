@@ -19,6 +19,8 @@ const galleryData = [
   {
     id: "cosmic",
     title: "Cosmic Series",
+    intro:
+      "Light, gravity, and spacetime rendered as projections from the edge of the observable universe.",
     pieces: [
       {
         title: "Holographic Principle",
@@ -67,6 +69,8 @@ const galleryData = [
   {
     id: "blockchain",
     title: "Crypto Series",
+    intro:
+      "Signals from decentralized finance—code, liquidity, and cryptography visualized as living systems.",
     pieces: [
       {
         title: "Blockchain Sun",
@@ -958,9 +962,9 @@ export default function Home() {
               color: "#d0d0e0",
             }}
           >
-            Browse the work by category below, or use the Gallery menu at the
-            top to jump directly to Cosmic, Crypto, Dataverse, Dimensional
-            Continuum, Energy, Immutable, Mind Collective, or Nature series.
+            Browse each series below, or click on a category to jump directly
+            to a series: Cosmic, Crypto, Dataverse, Dimensional Continuum,
+            Energy, Immutable, Mind Collective, and Nature.
           </p>
         </section>
 
