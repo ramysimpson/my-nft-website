@@ -398,6 +398,7 @@ export default function Home() {
   const [isGallerySectionHovered, setIsGallerySectionHovered] = useState(false);
   const [comingSoonPiece, setComingSoonPiece] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const { address, isConnected } = useAccount();
 
   const formatAddress = (addr) =>
@@ -409,6 +410,16 @@ export default function Home() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      setShowScrollTop(y > 320);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navLinks = useMemo(
@@ -1035,9 +1046,23 @@ export default function Home() {
         © {new Date().getFullYear()} Ramé Delaireaux Art. All rights reserved.
       </footer>
 
+      {showScrollTop && (
+        <button
+          type="button"
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="scroll-top-btn"
+        >
+          ↑ Top
+        </button>
+      )}
+
       <style jsx global>{`
         /* Gallery chips (body section) */
         .gallery-chip {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
           background: linear-gradient(135deg, rgba(86,86,130,0.18), rgba(120,118,255,0.25)) !important;
           border: 1px solid rgba(120, 118, 255, 0.35) !important;
           box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), 0 0 18px rgba(120, 118, 255, 0.28) !important;
@@ -1164,6 +1189,30 @@ export default function Home() {
           .art-card__img {
             height: 190px;
           }
+        }
+        .scroll-top-btn {
+          position: fixed;
+          right: 16px;
+          bottom: 18px;
+          z-index: 999;
+          padding: 10px 12px;
+          border-radius: 12px;
+          border: 1px solid rgba(120, 118, 255, 0.4);
+          background: rgba(20, 20, 32, 0.92);
+          color: #f5f5ff;
+          font-weight: 600;
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 0 18px rgba(120, 118, 255, 0.3);
+          cursor: pointer;
+          transition: transform 140ms ease, box-shadow 140ms ease;
+        }
+        .scroll-top-btn:hover,
+        .scroll-top-btn:focus-visible {
+          transform: translateY(-1px);
+          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), 0 0 22px rgba(120, 118, 255, 0.38);
+          outline: none;
+        }
+        .scroll-top-btn:active {
+          transform: translateY(0);
         }
       `}</style>
     </div>
