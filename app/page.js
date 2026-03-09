@@ -744,7 +744,10 @@ export default function Home() {
             gap: "1rem",
           }}
         >
-          <div style={{ fontWeight: 600, letterSpacing: "0.05em" }}>
+          <div
+            className="brand-title"
+            style={{ fontWeight: 600, letterSpacing: "0.05em" }}
+          >
             Ramé Delaireaux Art
           </div>
 
@@ -761,6 +764,7 @@ export default function Home() {
             }}
           >
             <a
+              className="nav-home"
               href="#hero"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -1095,12 +1099,19 @@ export default function Home() {
             padding-right: 16px;
             padding-top: 0.9rem;
             padding-bottom: 0.9rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
           }
           .top-nav {
-            gap: 0.9rem;
-            font-size: 0.9rem;
+            gap: 0.85rem;
+            font-size: 0.95rem;
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+          }
+          .nav-home {
+            display: none;
           }
           main {
             max-width: 100%;
