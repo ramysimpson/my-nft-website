@@ -924,10 +924,9 @@ export default function Home() {
               style={{
                 display: "flex",
                 gap: "0.4rem",
-                opacity: isGallerySectionHovered ? 1 : 0,
-                transform: isGallerySectionHovered
-                  ? "translateY(0)"
-                  : "translateY(-4px)",
+                flexWrap: "wrap",
+                opacity: 1,
+                transform: "none",
                 transition: "opacity 180ms ease, transform 180ms ease",
               }}
             >
@@ -1072,6 +1071,12 @@ export default function Home() {
           padding: 0.45rem 0.85rem !important;
           transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
         }
+        .gallery-chips {
+          opacity: 1 !important;
+          transform: none !important;
+          flex-wrap: wrap;
+          gap: 0.45rem;
+        }
         .gallery-chip:hover,
         .gallery-chip:focus-visible {
           transform: translateY(-1px);
@@ -1213,6 +1218,25 @@ export default function Home() {
         }
         .scroll-top-btn:active {
           transform: translateY(0);
+        }
+        @media (min-width: 1024px) {
+          .scroll-top-btn {
+            top: 50%;
+            right: 26px;
+            bottom: auto;
+            transform: translateY(-50%);
+            padding: 12px 16px;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), 0 0 26px rgba(120, 118, 255, 0.32);
+          }
+          .scroll-top-btn:hover,
+          .scroll-top-btn:focus-visible {
+            transform: translateY(-50%) translateX(-1px);
+          }
+          .scroll-top-btn:active {
+            transform: translateY(-50%) translateX(0);
+          }
         }
       `}</style>
     </div>
