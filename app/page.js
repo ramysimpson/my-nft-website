@@ -1269,7 +1269,7 @@ export default function Home() {
         .brand-title {
           font-size: 1.08rem;
           letter-spacing: 0.08em;
-          background: linear-gradient(120deg, #ffd98e 0%, #f7b733 45%, #ff9f1c 90%);
+          background: linear-gradient(120deg, #9be7ff 0%, #6fb7ff 45%, #5c8dff 90%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           text-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
