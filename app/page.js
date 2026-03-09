@@ -1109,7 +1109,8 @@ export default function Home() {
             gap: 0.85rem;
             font-size: 0.95rem;
             width: 100%;
-            justify-content: center;
+            justify-content: center !important;
+            align-items: center !important;
             flex-wrap: wrap;
             text-align: center;
           }
