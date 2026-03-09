@@ -963,8 +963,8 @@ export default function Home() {
             }}
           >
             Browse each series below, or click on a category to jump directly
-            to a series: Cosmic, Crypto, Dataverse, Dimensional Continuum,
-            Energy, Immutable, Mind Collective, and Nature.
+            to an individual series: Cosmic, Crypto, Dataverse, Dimensional
+            Continuum, Energy, Immutable, Mind Collective, and Nature.
           </p>
         </section>
 
