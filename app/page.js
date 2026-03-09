@@ -853,6 +853,7 @@ export default function Home() {
               Contact
             </a>
             <div
+              className="connect-wrap"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -1084,6 +1085,7 @@ export default function Home() {
           transform: none !important;
           flex-wrap: wrap;
           gap: 0.45rem;
+          justify-content: center;
         }
         .gallery-chip:hover,
         .gallery-chip:focus-visible {
@@ -1100,15 +1102,23 @@ export default function Home() {
             padding-top: 0.9rem;
             padding-bottom: 0.9rem;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: 0.75rem;
           }
           .top-nav {
             gap: 0.85rem;
             font-size: 0.95rem;
             width: 100%;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
+            text-align: center;
+          }
+          .connect-wrap {
+            width: 100%;
+            justify-content: center !important;
+            border-left: none !important;
+            padding-left: 0 !important;
+            margin-top: 0.35rem;
           }
           .nav-home {
             display: none;
