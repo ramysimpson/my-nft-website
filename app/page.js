@@ -3,6 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
+import MintButton from "./components/MintButton";
+import {
+  CONTRACT_ADDRESS,
+  SEPOLIA_EXPLORER_URL,
+  SEPOLIA_OPENSEA_URL,
+} from "./lib/contract";
 
 const galleryNav = [
   { id: "cosmic", label: "Cosmic" },
@@ -129,8 +135,8 @@ const galleryData = [
       "Explorations of worlds made from data—where information becomes terrain, architecture, and atmosphere.",
     pieces: [
       {
-        title: "Data Waterfall",
-        image: "/data-waterfall.png",
+        title: "Matrix Waterfall",
+        image: "/matrix-waterfall.png",
         description:
           "Streams of information cascading into a luminous pool of insight.",
       },
@@ -399,22 +405,13 @@ const buttonBase = {
 
 export default function Home() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [isGallerySectionHovered, setIsGallerySectionHovered] = useState(false);
-  const [comingSoonPiece, setComingSoonPiece] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { address, isConnected } = useAccount();
+  const hasContract = Boolean(CONTRACT_ADDRESS);
 
   const formatAddress = (addr) =>
     addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : "";
-
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") setComingSoonPiece(null);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -515,7 +512,9 @@ export default function Home() {
           >
             <button
               type="button"
-              onClick={() => setComingSoonPiece(piece.title)}
+              onClick={() => {
+                window.location.hash = "drops";
+              }}
               style={{
                 ...buttonBase,
                 background: "#4f46e5",
@@ -523,26 +522,41 @@ export default function Home() {
                 boxShadow: "0 10px 25px rgba(79,70,229,0.35)",
               }}
             >
-              Mint (Coming Soon)
+              Mint From Collection
             </button>
           <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
-            {["OpenSea", "Etherscan"].map((platform) => (
-              <button
-                key={platform}
-                className="secondary-links"
-                type="button"
-                aria-disabled="true"
-                title={`${platform} link coming soon`}
-                style={{
-                  ...buttonBase,
-                    cursor: "not-allowed",
-                    opacity: 0.55,
-                    background: "#0f0f18",
-                  }}
-                >
-                  View on {platform} (Coming Soon)
-                </button>
-              ))}
+            <a
+              className="secondary-links"
+              href={hasContract ? SEPOLIA_OPENSEA_URL : undefined}
+              target={hasContract ? "_blank" : undefined}
+              rel={hasContract ? "noreferrer" : undefined}
+              aria-disabled={!hasContract}
+              style={{
+                ...buttonBase,
+                cursor: hasContract ? "pointer" : "not-allowed",
+                opacity: hasContract ? 1 : 0.55,
+                background: "#0f0f18",
+                textDecoration: "none",
+              }}
+            >
+              View on OpenSea
+            </a>
+            <a
+              className="secondary-links"
+              href={hasContract ? SEPOLIA_EXPLORER_URL : undefined}
+              target={hasContract ? "_blank" : undefined}
+              rel={hasContract ? "noreferrer" : undefined}
+              aria-disabled={!hasContract}
+              style={{
+                ...buttonBase,
+                cursor: hasContract ? "pointer" : "not-allowed",
+                opacity: hasContract ? 1 : 0.55,
+                background: "#0f0f18",
+                textDecoration: "none",
+              }}
+            >
+              View on Etherscan
+            </a>
             </div>
           </div>
         </div>
@@ -610,8 +624,9 @@ export default function Home() {
           marginBottom: "1rem",
         }}
       >
-        Minting is coming soon. Connect your wallet to be ready; we’ll add the
-        contract and mint flow here when it’s live.
+        This collection now supports public minting on Sepolia. Connect your
+        wallet, confirm the mint in your wallet, and your NFT will be minted
+        directly to your connected address.
       </p>
       <div
         style={{
@@ -621,94 +636,50 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <button
-          type="button"
-          aria-disabled="true"
-          style={{
-            ...buttonBase,
-            cursor: "not-allowed",
-            opacity: 0.6,
-            background: "#1b1b28",
-          }}
-        >
-          Mint (Coming Soon)
-        </button>
+        <MintButton />
         {!isConnected && (
           <span style={{ color: "#b5b5c9", fontSize: "0.95rem" }}>
-            Tip: connect your wallet above so you’re ready on launch day.
+            Connect your wallet above to mint from the live collection.
           </span>
         )}
       </div>
-    </section>
-  );
-
-  const Modal = () =>
-    comingSoonPiece ? (
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mint coming soon"
-        tabIndex={-1}
-        onClick={() => setComingSoonPiece(null)}
-        style={{
-          position: "fixed",
-          inset: 0,
-          background: "rgba(0,0,0,0.65)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "1rem",
-          zIndex: 200,
-        }}
-      >
+      {hasContract && (
         <div
-          onClick={(e) => e.stopPropagation()}
           style={{
-            background: "#0e0e16",
-            border: "1px solid #26263b",
-            borderRadius: "14px",
-            maxWidth: "420px",
-            width: "100%",
-            padding: "1.25rem",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.45)",
+            display: "flex",
+            gap: "0.6rem",
+            flexWrap: "wrap",
+            marginTop: "0.9rem",
           }}
         >
-          <div
+          <a
+            href={SEPOLIA_EXPLORER_URL}
+            target="_blank"
+            rel="noreferrer"
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: "0.75rem",
-              gap: "0.75rem",
+              ...buttonBase,
+              textDecoration: "none",
+              background: "#0f0f18",
             }}
           >
-            <h3 style={{ margin: 0, fontSize: "1.1rem" }}>
-              Mint Coming Soon
-            </h3>
-            <button
-              type="button"
-              onClick={() => setComingSoonPiece(null)}
-              style={{
-                ...buttonBase,
-                padding: "0.35rem 0.6rem",
-                borderRadius: "8px",
-                background: "#1b1b28",
-              }}
-            >
-              Close
-            </button>
-          </div>
-          <p style={{ margin: "0 0 0.5rem 0", color: "#d0d0e0" }}>
-            “{comingSoonPiece}” will be available to mint soon. Connect your
-            wallet and stay tuned for the drop.
-          </p>
-          <p style={{ margin: 0, color: "#9a9ab5", fontSize: "0.95rem" }}>
-            When the contract is live, you’ll be able to mint directly here and
-            view the piece on marketplaces and explorers.
-          </p>
+            Open Contract
+          </a>
+          <a
+            href={SEPOLIA_OPENSEA_URL}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              ...buttonBase,
+              textDecoration: "none",
+              background: "#0f0f18",
+            }}
+          >
+            View Collection
+          </a>
         </div>
-      </div>
-    ) : null;
+      )}
+    </section>
+  );
 
   return (
     <div
@@ -720,8 +691,6 @@ export default function Home() {
         fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
       }}
     >
-      <Modal />
-
       <header
         style={{
           position: "sticky",
@@ -909,14 +878,6 @@ export default function Home() {
         <section
           id="gallery"
           style={{ paddingBottom: "2rem" }}
-          onMouseEnter={() => setIsGallerySectionHovered(true)}
-          onMouseLeave={() => setIsGallerySectionHovered(false)}
-          onFocus={() => setIsGallerySectionHovered(true)}
-          onBlur={(e) => {
-            if (!e.currentTarget.contains(e.relatedTarget)) {
-              setIsGallerySectionHovered(false);
-            }
-          }}
         >
           <div
             style={{

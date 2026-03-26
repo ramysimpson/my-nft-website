@@ -957,7 +957,7 @@ export default function Home() {
               gap: "1.5rem",
             }}
           >
-            {/* Dataverse 1 – data-waterfall.png */}
+            {/* Dataverse 1 – matrix-waterfall.png */}
             <div
               style={{
                 flex: "1 1 260px",
@@ -970,8 +970,8 @@ export default function Home() {
               }}
             >
               <img
-                src="/data-waterfall.png"
-                alt="Data Waterfall"
+                src="/matrix-waterfall.png"
+                alt="Matrix Waterfall"
                 style={{
                   width: "100%",
                   height: "190px",
@@ -981,7 +981,7 @@ export default function Home() {
                 }}
               />
               <h3 style={{ fontSize: "1.1rem", marginBottom: "0.25rem" }}>
-                Data Waterfall
+                Matrix Waterfall
               </h3>
               <p style={{ fontSize: "0.9rem", opacity: 0.85 }}>
                 Streams of information cascading into a luminous pool of insight.
