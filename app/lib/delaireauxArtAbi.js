@@ -4,10 +4,17 @@ export const DELAIREAUX_ART_ABI = [
       { internalType: "address", name: "initialOwner", type: "address" },
       { internalType: "string", name: "baseTokenURI_", type: "string" },
       { internalType: "uint256", name: "maxSupply_", type: "uint256" },
-      { internalType: "uint256", name: "mintPriceWei_", type: "uint256" },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "tokenIdsLength", type: "uint256" },
+      { internalType: "uint256", name: "pricesLength", type: "uint256" },
+    ],
+    name: "ArrayLengthMismatch",
+    type: "error",
   },
   {
     inputs: [
@@ -57,6 +64,11 @@ export const DELAIREAUX_ART_ABI = [
     type: "error",
   },
   {
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+    name: "InvalidTokenId",
+    type: "error",
+  },
+  {
     inputs: [
       { internalType: "uint256", name: "expected", type: "uint256" },
       { internalType: "uint256", name: "received", type: "uint256" },
@@ -66,6 +78,16 @@ export const DELAIREAUX_ART_ABI = [
   },
   { inputs: [], name: "MaxSupplyReached", type: "error" },
   { inputs: [], name: "MintClosed", type: "error" },
+  {
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+    name: "TokenPriceNotSet",
+    type: "error",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+    name: "TokenAlreadyMinted",
+    type: "error",
+  },
   {
     inputs: [{ internalType: "address", name: "owner", type: "address" }],
     name: "OwnableInvalidOwner",
@@ -109,6 +131,15 @@ export const DELAIREAUX_ART_ABI = [
       { indexed: true, internalType: "address", name: "newOwner", type: "address" },
     ],
     name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: "uint256", name: "tokenId", type: "uint256" },
+      { indexed: false, internalType: "uint256", name: "priceWei", type: "uint256" },
+    ],
+    name: "TokenPriceUpdated",
     type: "event",
   },
   {
@@ -163,14 +194,21 @@ export const DELAIREAUX_ART_ABI = [
     type: "function",
   },
   {
-    inputs: [],
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+    name: "isMinted",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     name: "mint",
     outputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     stateMutability: "payable",
     type: "function",
   },
   {
-    inputs: [],
+    inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     name: "mintPrice",
     outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
@@ -191,7 +229,10 @@ export const DELAIREAUX_ART_ABI = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "address", name: "to", type: "address" }],
+    inputs: [
+      { internalType: "address", name: "to", type: "address" },
+      { internalType: "uint256", name: "tokenId", type: "uint256" },
+    ],
     name: "ownerMint",
     outputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
     stateMutability: "nonpayable",
@@ -259,8 +300,21 @@ export const DELAIREAUX_ART_ABI = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "newMintPrice", type: "uint256" }],
+    inputs: [
+      { internalType: "uint256", name: "tokenId", type: "uint256" },
+      { internalType: "uint256", name: "newMintPrice", type: "uint256" },
+    ],
     name: "setMintPrice",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256[]", name: "tokenIds", type: "uint256[]" },
+      { internalType: "uint256[]", name: "newMintPrices", type: "uint256[]" },
+    ],
+    name: "setMintPrices",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

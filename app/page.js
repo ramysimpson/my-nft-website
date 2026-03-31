@@ -4,10 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 import MintButton from "./components/MintButton";
+import TokenPriceBadge from "./components/TokenPriceBadge";
 import {
   CONTRACT_ADDRESS,
-  SEPOLIA_EXPLORER_URL,
-  SEPOLIA_OPENSEA_URL,
+  ETHEREUM_EXPLORER_URL,
+  ETHEREUM_OPENSEA_URL,
 } from "./lib/contract";
 
 const galleryNav = [
@@ -407,6 +408,7 @@ export default function Home() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [selectedTokenId, setSelectedTokenId] = useState(null);
   const { address, isConnected } = useAccount();
   const hasContract = Boolean(CONTRACT_ADDRESS);
 
@@ -428,6 +430,24 @@ export default function Home() {
     []
   );
 
+  const catalog = useMemo(() => {
+    let tokenId = 1;
+    return galleryData.map((category) => ({
+      ...category,
+      pieces: category.pieces.map((piece) => ({
+        ...piece,
+        tokenId: tokenId++,
+      })),
+    }));
+  }, []);
+
+  const selectedPiece = useMemo(
+    () =>
+      catalog.flatMap((category) => category.pieces).find((piece) => piece.tokenId === selectedTokenId) ??
+      null,
+    [catalog, selectedTokenId]
+  );
+
   const renderCard = (piece) => (
     <div
       key={piece.title}
@@ -447,7 +467,9 @@ export default function Home() {
             ? "0 24px 60px rgba(0,0,0,0.6), 0 0 60px rgba(120,120,255,0.25)"
             : "0 16px 45px rgba(0,0,0,0.55), 0 0 50px rgba(120,120,255,0.18)",
         border:
-          hoveredCard === piece.title
+          selectedTokenId === piece.tokenId
+            ? "1px solid #7c74ff"
+            : hoveredCard === piece.title
             ? "1px solid #5b55f0"
             : "1px solid #26263b",
         display: "flex",
@@ -456,7 +478,9 @@ export default function Home() {
         transition:
           "transform 160ms ease, box-shadow 160ms ease, border 160ms ease",
         transform:
-          hoveredCard === piece.title ? "translateY(-4px)" : "translateY(0)",
+          hoveredCard === piece.title || selectedTokenId === piece.tokenId
+            ? "translateY(-4px)"
+            : "translateY(0)",
         overflow: "hidden",
       }}
     >
@@ -498,6 +522,20 @@ export default function Home() {
           <h3 className="art-card__title" style={{ fontSize: "1.1rem", margin: 0 }}>
             {piece.title}
           </h3>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "0.75rem",
+              flexWrap: "wrap",
+            }}
+          >
+            <p style={{ fontSize: "0.8rem", color: "#9a9ab5", margin: 0 }}>
+              Token #{piece.tokenId}
+            </p>
+            <TokenPriceBadge tokenId={piece.tokenId} />
+          </div>
           <p className="art-card__desc" style={{ fontSize: "0.9rem", opacity: 0.85, margin: 0 }}>
             {piece.description}
           </p>
@@ -512,22 +550,32 @@ export default function Home() {
           >
             <button
               type="button"
-              onClick={() => {
-                window.location.hash = "drops";
-              }}
+              onClick={() => setSelectedTokenId(piece.tokenId)}
               style={{
                 ...buttonBase,
-                background: "#4f46e5",
-                border: "1px solid #5b55f0",
+                background:
+                  selectedTokenId === piece.tokenId ? "#2f8f5b" : "#4f46e5",
+                border:
+                  selectedTokenId === piece.tokenId
+                    ? "1px solid #3baa72"
+                    : "1px solid #5b55f0",
                 boxShadow: "0 10px 25px rgba(79,70,229,0.35)",
               }}
             >
-              Mint From Collection
+              {selectedTokenId === piece.tokenId
+                ? "Selected"
+                : "Select Artwork"}
             </button>
+          {selectedTokenId === piece.tokenId && (
+            <MintButton
+              selectedTokenId={piece.tokenId}
+              selectedTitle={piece.title}
+            />
+          )}
           <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
             <a
               className="secondary-links"
-              href={hasContract ? SEPOLIA_OPENSEA_URL : undefined}
+              href={hasContract ? ETHEREUM_OPENSEA_URL : undefined}
               target={hasContract ? "_blank" : undefined}
               rel={hasContract ? "noreferrer" : undefined}
               aria-disabled={!hasContract}
@@ -543,7 +591,7 @@ export default function Home() {
             </a>
             <a
               className="secondary-links"
-              href={hasContract ? SEPOLIA_EXPLORER_URL : undefined}
+              href={hasContract ? ETHEREUM_EXPLORER_URL : undefined}
               target={hasContract ? "_blank" : undefined}
               rel={hasContract ? "noreferrer" : undefined}
               aria-disabled={!hasContract}
@@ -624,10 +672,38 @@ export default function Home() {
           marginBottom: "1rem",
         }}
       >
-        This collection now supports public minting on Sepolia. Connect your
-        wallet, confirm the mint in your wallet, and your NFT will be minted
-        directly to your connected address.
+        Select a piece from the gallery to mint directly from its card. The
+        selected artwork still appears here as a quick summary of what is
+        currently active.
       </p>
+      <div
+        style={{
+          marginBottom: "1rem",
+          padding: "0.9rem 1rem",
+          borderRadius: "14px",
+          border: "1px solid #26263b",
+          background: "rgba(19, 19, 31, 0.95)",
+          maxWidth: "560px",
+        }}
+      >
+        <div style={{ fontSize: "0.8rem", color: "#9a9ab5", marginBottom: "0.3rem" }}>
+          Selected artwork
+        </div>
+        {selectedPiece ? (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+            <strong style={{ fontSize: "1rem" }}>
+              {selectedPiece.title} • Token #{selectedPiece.tokenId}
+            </strong>
+            <span style={{ color: "#cfd3e6", fontSize: "0.9rem" }}>
+              {selectedPiece.description}
+            </span>
+          </div>
+        ) : (
+          <span style={{ color: "#cfd3e6", fontSize: "0.9rem" }}>
+            No artwork selected yet. Choose one from the gallery below.
+          </span>
+        )}
+      </div>
       <div
         style={{
           display: "flex",
@@ -636,7 +712,10 @@ export default function Home() {
           alignItems: "center",
         }}
       >
-        <MintButton />
+        <MintButton
+          selectedTokenId={selectedPiece?.tokenId}
+          selectedTitle={selectedPiece?.title}
+        />
         {!isConnected && (
           <span style={{ color: "#b5b5c9", fontSize: "0.95rem" }}>
             Connect your wallet above to mint from the live collection.
@@ -653,7 +732,7 @@ export default function Home() {
           }}
         >
           <a
-            href={SEPOLIA_EXPLORER_URL}
+            href={ETHEREUM_EXPLORER_URL}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -665,7 +744,7 @@ export default function Home() {
             Open Contract
           </a>
           <a
-            href={SEPOLIA_OPENSEA_URL}
+            href={ETHEREUM_OPENSEA_URL}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -936,7 +1015,7 @@ export default function Home() {
 
         <DropsSection />
 
-        {galleryData.map((category, idx) =>
+        {catalog.map((category, idx) =>
           renderCategorySection(category, idx !== 0)
         )}
 

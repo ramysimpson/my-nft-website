@@ -7,18 +7,20 @@ import {
   lightTheme,
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider, http } from "wagmi";
-import { sepolia } from "wagmi/chains";
+import { mainnet } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@rainbow-me/rainbowkit/styles.css";
 
 const projectId = process.env.NEXT_PUBLIC_WC_PROJECT_ID || "";
+const mainnetRpcUrl =
+  process.env.NEXT_PUBLIC_MAINNET_RPC_URL || "https://ethereum-rpc.publicnode.com";
 
 const wagmiConfig = getDefaultConfig({
   appName: "My NFT Website",
   projectId,
-  chains: [sepolia],
+  chains: [mainnet],
   transports: {
-    [sepolia.id]: http(), // public RPC; swap for your own if needed
+    [mainnet.id]: http(mainnetRpcUrl),
   },
   ssr: true,
 });

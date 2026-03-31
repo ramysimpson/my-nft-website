@@ -3,18 +3,69 @@
 import { useState } from "react";
 import {
   useAccount,
+  useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
+import { mainnet } from "wagmi/chains";
+import { formatEther } from "viem";
+import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../lib/contract";
 
-// TODO: replace with your contract address and ABI when ready
-const CONTRACT_ADDRESS = "";
-const CONTRACT_ABI = [];
 const FUNCTION_NAME = "mint";
+const EMPTY_ADDRESS = "0x0000000000000000000000000000000000000000";
 
-export default function MintButton() {
+export default function MintButton({ selectedTokenId, selectedTitle }) {
   const { isConnected } = useAccount();
   const [txError, setTxError] = useState(null);
+  const hasContract = Boolean(CONTRACT_ADDRESS);
+  const contractAddress = hasContract ? CONTRACT_ADDRESS : EMPTY_ADDRESS;
+  const hasSelection = typeof selectedTokenId === "number";
+
+  const readOptions = {
+    address: contractAddress,
+    abi: CONTRACT_ABI,
+    chainId: mainnet.id,
+    query: {
+      enabled: hasContract,
+    },
+  };
+
+  const {
+    data: mintPrice,
+    error: mintPriceError,
+    isLoading: mintPriceLoading,
+  } = useReadContract({
+    ...readOptions,
+    functionName: "mintPrice",
+    args: hasSelection ? [BigInt(selectedTokenId)] : undefined,
+    query: {
+      enabled: hasContract && hasSelection,
+    },
+  });
+
+  const { data: publicMintOpen } = useReadContract({
+    ...readOptions,
+    functionName: "publicMintOpen",
+  });
+
+  const { data: totalSupply } = useReadContract({
+    ...readOptions,
+    functionName: "totalSupply",
+  });
+
+  const { data: maxSupply } = useReadContract({
+    ...readOptions,
+    functionName: "maxSupply",
+  });
+
+  const { data: selectedTokenMinted } = useReadContract({
+    ...readOptions,
+    functionName: "isMinted",
+    args: hasSelection ? [BigInt(selectedTokenId)] : undefined,
+    query: {
+      enabled: hasContract && hasSelection,
+    },
+  });
 
   const {
     data: txHash,
@@ -31,18 +82,37 @@ export default function MintButton() {
       hash: txHash,
     });
 
-  const hasContract = CONTRACT_ADDRESS && CONTRACT_ABI.length > 0;
-  const canMint = isConnected && hasContract && !isPending && !isConfirming;
+  const soldOut =
+    typeof totalSupply === "bigint" &&
+    typeof maxSupply === "bigint" &&
+    totalSupply >= maxSupply;
+
+  const selectedAlreadyMinted = Boolean(selectedTokenMinted);
+  const tokenPriceReadFailed = Boolean(mintPriceError);
+  const hasTokenPrice = typeof mintPrice === "bigint" && mintPrice > 0n;
+
+  const canMint =
+    isConnected &&
+    hasContract &&
+    hasSelection &&
+    hasTokenPrice &&
+    publicMintOpen &&
+    !selectedAlreadyMinted &&
+    !soldOut &&
+    !isPending &&
+    !isConfirming;
 
   const handleMint = () => {
     setTxError(null);
-    if (!hasContract) return;
+    if (!hasContract || !hasSelection) return;
+
     writeContract({
       address: CONTRACT_ADDRESS,
       abi: CONTRACT_ABI,
+      chainId: mainnet.id,
       functionName: FUNCTION_NAME,
-      args: [],
-      // value: 0n, // add if your mint requires ETH
+      args: [BigInt(selectedTokenId)],
+      value: mintPrice ?? 0n,
     });
   };
 
@@ -53,16 +123,53 @@ export default function MintButton() {
       ? "Minting..."
       : isConfirmed
       ? "Minted!"
+      : !hasSelection
+      ? "Select Artwork"
+      : mintPriceLoading
+      ? "Loading Price..."
+      : tokenPriceReadFailed
+      ? "Price Error"
+      : !hasTokenPrice
+      ? "Price Unavailable"
+      : selectedAlreadyMinted
+      ? "Already Minted"
+      : soldOut
+      ? "Sold Out"
+      : publicMintOpen
+      ? `Mint Token #${selectedTokenId}`
       : "Mint"
-    : "Mint (coming soon)";
+    : "Mint Unavailable";
+
+  const helperText = !hasContract
+    ? "Set NEXT_PUBLIC_CONTRACT_ADDRESS to enable minting."
+    : !hasSelection
+    ? "Choose an artwork from the gallery before minting."
+    : mintPriceLoading
+    ? `Loading Token #${selectedTokenId} price from Ethereum...`
+    : tokenPriceReadFailed
+    ? `Unable to read Token #${selectedTokenId} price from Ethereum. Refresh and try again.`
+    : !hasTokenPrice
+    ? `Set a price for Token #${selectedTokenId} before opening mint.`
+    : selectedAlreadyMinted
+    ? `Token #${selectedTokenId} has already been minted.`
+    : soldOut
+    ? "Collection is fully minted."
+    : publicMintOpen
+    ? `Selected: ${selectedTitle} • Price: ${formatEther(mintPrice ?? 0n)} ETH`
+    : `Selected: ${selectedTitle} • Price: ${formatEther(mintPrice ?? 0n)} ETH • Public mint is currently closed.`;
+
+  const supplyText =
+    typeof totalSupply === "bigint" && typeof maxSupply === "bigint"
+      ? `${totalSupply.toString()} / ${maxSupply.toString()} minted`
+      : null;
 
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "0.35rem",
-        maxWidth: "260px",
+        gap: "0.45rem",
+        maxWidth: "320px",
       }}
     >
       <button
@@ -85,9 +192,12 @@ export default function MintButton() {
       >
         {label}
       </button>
-      {!hasContract && (
-        <span style={{ fontSize: "0.85rem", color: "#9a9ab5" }}>
-          Add contract address + ABI to enable mint.
+      <span style={{ fontSize: "0.85rem", color: "#9a9ab5" }}>
+        {helperText}
+      </span>
+      {supplyText && (
+        <span style={{ fontSize: "0.85rem", color: "#b9bdd6" }}>
+          {supplyText}
         </span>
       )}
       {txError && (
