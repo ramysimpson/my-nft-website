@@ -159,11 +159,6 @@ export default function MintButton({ selectedTokenId, selectedTitle }) {
     ? `Selected: ${selectedTitle} • Price: ${formatEther(mintPrice ?? 0n)} ETH`
     : `Selected: ${selectedTitle} • Price: ${formatEther(mintPrice ?? 0n)} ETH • Public mint is currently closed.`;
 
-  const supplyText =
-    typeof totalSupply === "bigint" && typeof maxSupply === "bigint"
-      ? `${totalSupply.toString()} / ${maxSupply.toString()} minted`
-      : null;
-
   const showInlineConnect = hasSelection && !isConnected;
 
   return (
@@ -221,11 +216,6 @@ export default function MintButton({ selectedTokenId, selectedTitle }) {
             </button>
           )}
         </ConnectButton.Custom>
-      )}
-      {supplyText && (
-        <span style={{ fontSize: "0.85rem", color: "#b9bdd6" }}>
-          {supplyText}
-        </span>
       )}
       {txError && (
         <span style={{ fontSize: "0.85rem", color: "#ffb3b3" }}>

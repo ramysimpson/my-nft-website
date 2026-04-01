@@ -534,7 +534,7 @@ export default function Home() {
             }}
           >
             <p style={{ fontSize: "0.8rem", color: "#9a9ab5", margin: 0 }}>
-              Token #{piece.tokenId}
+              Token #{piece.tokenId} • 1 of 1
             </p>
             <TokenPriceBadge tokenId={piece.tokenId} />
           </div>
