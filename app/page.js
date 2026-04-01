@@ -409,6 +409,7 @@ export default function Home() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedTokenId, setSelectedTokenId] = useState(null);
+  const [mobileSeriesIndexes, setMobileSeriesIndexes] = useState({});
   const { address, isConnected } = useAccount();
   const hasContract = Boolean(CONTRACT_ADDRESS);
 
@@ -583,44 +584,92 @@ export default function Home() {
     </div>
   );
 
-  const renderCategorySection = (category, withBorder = true) => (
-    <section
-      key={category.id}
-      id={category.id}
-      style={{
-        paddingBottom: "3rem",
-        borderTop: withBorder ? "1px solid #1f1f30" : "none",
-        paddingTop: withBorder ? "2.5rem" : "0rem",
-      }}
-    >
-      <h2 style={{ fontSize: "1.9rem", marginBottom: "1.25rem" }}>
-        {category.title}
-      </h2>
-      {category.intro && (
-        <p
-          style={{
-            fontSize: "1rem",
-            lineHeight: 1.7,
-            maxWidth: "640px",
-            color: "#d0d0e0",
-            marginBottom: "1.25rem",
-          }}
-        >
-          {category.intro}
-        </p>
-      )}
-      <div
-        className="cards-grid"
+  const updateMobileSeriesIndex = (categoryId, totalPieces, direction) => {
+    setMobileSeriesIndexes((current) => {
+      const activeIndex = current[categoryId] ?? 0;
+      const nextIndex =
+        direction === "next"
+          ? (activeIndex + 1) % totalPieces
+          : (activeIndex - 1 + totalPieces) % totalPieces;
+
+      return {
+        ...current,
+        [categoryId]: nextIndex,
+      };
+    });
+  };
+
+  const renderCategorySection = (category, withBorder = true) => {
+    const activeMobileIndex = mobileSeriesIndexes[category.id] ?? 0;
+    const activeMobilePiece = category.pieces[activeMobileIndex];
+
+    return (
+      <section
+        key={category.id}
+        id={category.id}
         style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1.5rem",
+          paddingBottom: "3rem",
+          borderTop: withBorder ? "1px solid #1f1f30" : "none",
+          paddingTop: withBorder ? "2.5rem" : "0rem",
         }}
       >
-        {category.pieces.map(renderCard)}
-      </div>
-    </section>
-  );
+        <h2 style={{ fontSize: "1.9rem", marginBottom: "1.25rem" }}>
+          {category.title}
+        </h2>
+        {category.intro && (
+          <p
+            style={{
+              fontSize: "1rem",
+              lineHeight: 1.7,
+              maxWidth: "640px",
+              color: "#d0d0e0",
+              marginBottom: "1.25rem",
+            }}
+          >
+            {category.intro}
+          </p>
+        )}
+        <div
+          className="cards-grid desktop-cards-grid"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "1.5rem",
+          }}
+        >
+          {category.pieces.map(renderCard)}
+        </div>
+        <div className="mobile-series-carousel">
+          <div className="mobile-series-card">{renderCard(activeMobilePiece)}</div>
+          <div className="mobile-series-controls">
+            <button
+              type="button"
+              onClick={() =>
+                updateMobileSeriesIndex(category.id, category.pieces.length, "prev")
+              }
+              className="mobile-series-arrow"
+              aria-label={`View previous artwork in ${category.title}`}
+            >
+              ←
+            </button>
+            <span className="mobile-series-counter">
+              {activeMobileIndex + 1} / {category.pieces.length}
+            </span>
+            <button
+              type="button"
+              onClick={() =>
+                updateMobileSeriesIndex(category.id, category.pieces.length, "next")
+              }
+              className="mobile-series-arrow"
+              aria-label={`View next artwork in ${category.title}`}
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  };
 
   const DropsSection = () => (
     <section
@@ -1044,6 +1093,9 @@ export default function Home() {
           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45), 0 0 22px rgba(120, 118, 255, 0.36) !important;
           outline: none;
         }
+        .mobile-series-carousel {
+          display: none;
+        }
 
         @media (max-width: 768px) {
           .header-inner {
@@ -1108,6 +1160,45 @@ export default function Home() {
           .dropdown-link {
             padding: 0.55rem 0.85rem;
             font-size: 0.9rem;
+          }
+          .desktop-cards-grid {
+            display: none !important;
+          }
+          .mobile-series-carousel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+          }
+          .mobile-series-card {
+            display: flex;
+            justify-content: center;
+          }
+          .mobile-series-card .art-card {
+            margin-bottom: 0;
+          }
+          .mobile-series-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+          }
+          .mobile-series-arrow {
+            width: 46px;
+            height: 46px;
+            border-radius: 999px;
+            border: 1px solid rgba(120, 118, 255, 0.42);
+            background: linear-gradient(135deg, rgba(53, 48, 135, 0.95), rgba(86, 74, 255, 0.95));
+            color: #f7f7ff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38), 0 0 20px rgba(120, 118, 255, 0.26);
+          }
+          .mobile-series-counter {
+            min-width: 72px;
+            text-align: center;
+            color: #cfd3e6;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
           }
           .art-card {
             flex: 1 1 100% !important;
