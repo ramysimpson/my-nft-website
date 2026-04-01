@@ -1027,8 +1027,8 @@ export default function Home() {
               marginBottom: "0.75rem",
             }}
           >
-            For collaboration inquiries, commissions, or questions about future
-            NFT drops, you can reach me at:
+            For collaboration inquiries, questions about future NFT drops, or
+            any general inquiries, you can reach me at
           </p>
           <p style={{ fontSize: "1rem" }}>
             Email:{" "}
