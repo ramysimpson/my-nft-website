@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 import MintButton from "./components/MintButton";
+import TokenMintedLinks from "./components/TokenMintedLinks";
 import TokenPriceBadge from "./components/TokenPriceBadge";
 import {
   CONTRACT_ADDRESS,
@@ -573,38 +574,7 @@ export default function Home() {
             />
           )}
           <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
-            <a
-              className="secondary-links"
-              href={hasContract ? ETHEREUM_OPENSEA_URL : undefined}
-              target={hasContract ? "_blank" : undefined}
-              rel={hasContract ? "noreferrer" : undefined}
-              aria-disabled={!hasContract}
-              style={{
-                ...buttonBase,
-                cursor: hasContract ? "pointer" : "not-allowed",
-                opacity: hasContract ? 1 : 0.55,
-                background: "#0f0f18",
-                textDecoration: "none",
-              }}
-            >
-              View on OpenSea
-            </a>
-            <a
-              className="secondary-links"
-              href={hasContract ? ETHEREUM_EXPLORER_URL : undefined}
-              target={hasContract ? "_blank" : undefined}
-              rel={hasContract ? "noreferrer" : undefined}
-              aria-disabled={!hasContract}
-              style={{
-                ...buttonBase,
-                cursor: hasContract ? "pointer" : "not-allowed",
-                opacity: hasContract ? 1 : 0.55,
-                background: "#0f0f18",
-                textDecoration: "none",
-              }}
-            >
-              View on Etherscan
-            </a>
+            <TokenMintedLinks tokenId={piece.tokenId} buttonBase={buttonBase} />
             </div>
           </div>
         </div>
@@ -741,7 +711,7 @@ export default function Home() {
               background: "#0f0f18",
             }}
           >
-            Open Contract
+            View Contract on Etherscan
           </a>
           <a
             href={ETHEREUM_OPENSEA_URL}

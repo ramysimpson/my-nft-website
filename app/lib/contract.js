@@ -12,3 +12,11 @@ export const ETHEREUM_EXPLORER_URL = CONTRACT_ADDRESS
 export const ETHEREUM_OPENSEA_URL = CONTRACT_ADDRESS
   ? `https://opensea.io/assets/ethereum/${CONTRACT_ADDRESS}`
   : "";
+
+export function getEthereumOpenSeaAssetUrl(tokenId) {
+  if (!CONTRACT_ADDRESS || typeof tokenId !== "number") {
+    return "";
+  }
+
+  return `https://opensea.io/assets/ethereum/${CONTRACT_ADDRESS}/${tokenId}`;
+}
