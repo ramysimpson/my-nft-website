@@ -640,8 +640,7 @@ export default function Home() {
           {category.pieces.map(renderCard)}
         </div>
         <div className="mobile-series-carousel">
-          <div className="mobile-series-card">{renderCard(activeMobilePiece)}</div>
-          <div className="mobile-series-controls">
+          <div className="mobile-series-stage">
             <button
               type="button"
               onClick={() =>
@@ -652,9 +651,7 @@ export default function Home() {
             >
               ←
             </button>
-            <span className="mobile-series-counter">
-              {activeMobileIndex + 1} / {category.pieces.length}
-            </span>
+            <div className="mobile-series-card">{renderCard(activeMobilePiece)}</div>
             <button
               type="button"
               onClick={() =>
@@ -665,6 +662,11 @@ export default function Home() {
             >
               →
             </button>
+          </div>
+          <div className="mobile-series-controls">
+            <span className="mobile-series-counter">
+              {activeMobileIndex + 1} / {category.pieces.length}
+            </span>
           </div>
         </div>
       </section>
@@ -1169,18 +1171,24 @@ export default function Home() {
             flex-direction: column;
             gap: 0.85rem;
           }
+          .mobile-series-stage {
+            display: grid;
+            grid-template-columns: 46px minmax(0, 1fr) 46px;
+            align-items: center;
+            gap: 0.55rem;
+          }
           .mobile-series-card {
             display: flex;
             justify-content: center;
+            min-width: 0;
           }
           .mobile-series-card .art-card {
             margin-bottom: 0;
           }
           .mobile-series-controls {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 0.8rem;
+            align-items: center;
           }
           .mobile-series-arrow {
             width: 46px;
@@ -1192,6 +1200,9 @@ export default function Home() {
             font-size: 1.2rem;
             font-weight: 700;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38), 0 0 20px rgba(120, 118, 255, 0.26);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
           }
           .mobile-series-counter {
             min-width: 72px;
