@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import {
   useAccount,
   useReadContract,
@@ -163,6 +164,8 @@ export default function MintButton({ selectedTokenId, selectedTitle }) {
       ? `${totalSupply.toString()} / ${maxSupply.toString()} minted`
       : null;
 
+  const showInlineConnect = hasSelection && !isConnected;
+
   return (
     <div
       style={{
@@ -195,6 +198,30 @@ export default function MintButton({ selectedTokenId, selectedTitle }) {
       <span style={{ fontSize: "0.85rem", color: "#9a9ab5" }}>
         {helperText}
       </span>
+      {showInlineConnect && (
+        <ConnectButton.Custom>
+          {({ openConnectModal, mounted }) => (
+            <button
+              type="button"
+              onClick={openConnectModal}
+              disabled={!mounted}
+              style={{
+                width: "100%",
+                padding: "0.7rem 1rem",
+                borderRadius: "999px",
+                border: "1px solid #3f7d62",
+                background: "#173327",
+                color: "#dff7eb",
+                fontWeight: 600,
+                cursor: mounted ? "pointer" : "not-allowed",
+                opacity: mounted ? 1 : 0.6,
+              }}
+            >
+              Connect Wallet to Mint
+            </button>
+          )}
+        </ConnectButton.Custom>
+      )}
       {supplyText && (
         <span style={{ fontSize: "0.85rem", color: "#b9bdd6" }}>
           {supplyText}
