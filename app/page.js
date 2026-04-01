@@ -9,7 +9,6 @@ import TokenPriceBadge from "./components/TokenPriceBadge";
 import {
   CONTRACT_ADDRESS,
   ETHEREUM_EXPLORER_URL,
-  ETHEREUM_OPENSEA_URL,
 } from "./lib/contract";
 
 const galleryNav = [
@@ -442,13 +441,6 @@ export default function Home() {
     }));
   }, []);
 
-  const selectedPiece = useMemo(
-    () =>
-      catalog.flatMap((category) => category.pieces).find((piece) => piece.tokenId === selectedTokenId) ??
-      null,
-    [catalog, selectedTokenId]
-  );
-
   const renderCard = (piece) => (
     <div
       key={piece.title}
@@ -502,6 +494,7 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           gap: "0.6rem",
+          flex: 1,
         }}
       >
         <div className="art-image-container">
@@ -519,7 +512,15 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="art-card-body" style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+        <div
+          className="art-card-body"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.45rem",
+            flex: 1,
+          }}
+        >
           <h3 className="art-card__title" style={{ fontSize: "1.1rem", margin: 0 }}>
             {piece.title}
           </h3>
@@ -642,56 +643,8 @@ export default function Home() {
           marginBottom: "1rem",
         }}
       >
-        Select a piece from the gallery to mint directly from its card. The
-        selected artwork still appears here as a quick summary of what is
-        currently active.
+        Select a piece from the gallery to mint directly from its card.
       </p>
-      <div
-        style={{
-          marginBottom: "1rem",
-          padding: "0.9rem 1rem",
-          borderRadius: "14px",
-          border: "1px solid #26263b",
-          background: "rgba(19, 19, 31, 0.95)",
-          maxWidth: "560px",
-        }}
-      >
-        <div style={{ fontSize: "0.8rem", color: "#9a9ab5", marginBottom: "0.3rem" }}>
-          Selected artwork
-        </div>
-        {selectedPiece ? (
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-            <strong style={{ fontSize: "1rem" }}>
-              {selectedPiece.title} • Token #{selectedPiece.tokenId}
-            </strong>
-            <span style={{ color: "#cfd3e6", fontSize: "0.9rem" }}>
-              {selectedPiece.description}
-            </span>
-          </div>
-        ) : (
-          <span style={{ color: "#cfd3e6", fontSize: "0.9rem" }}>
-            No artwork selected yet. Choose one from the gallery below.
-          </span>
-        )}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.75rem",
-          alignItems: "center",
-        }}
-      >
-        <MintButton
-          selectedTokenId={selectedPiece?.tokenId}
-          selectedTitle={selectedPiece?.title}
-        />
-        {!isConnected && (
-          <span style={{ color: "#b5b5c9", fontSize: "0.95rem" }}>
-            Connect your wallet above to mint from the live collection.
-          </span>
-        )}
-      </div>
       {hasContract && (
         <div
           style={{
@@ -712,18 +665,6 @@ export default function Home() {
             }}
           >
             View Contract on Etherscan
-          </a>
-          <a
-            href={ETHEREUM_OPENSEA_URL}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              ...buttonBase,
-              textDecoration: "none",
-              background: "#0f0f18",
-            }}
-          >
-            View Collection
           </a>
         </div>
       )}
