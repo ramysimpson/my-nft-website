@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #7 - Cosmic Genesis",
+  "description": "The birth of everything—an explosion of color, energy, and possibility.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/cosmic-genesis.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Cosmic Genesis"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 7
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

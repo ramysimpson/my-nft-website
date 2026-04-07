@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #1 - Holographic Principle",
+  "description": "A visual meditation on the idea that our three-dimensional reality may be encoded on a distant two-dimensional boundary.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/hologram1.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Holographic Principle"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 1
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

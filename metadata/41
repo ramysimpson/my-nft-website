@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #41 - Adaptive Swarm",
+  "description": "A hive of agents adjusting in real time—collective intent emerging from many minds.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/adaptive-swarm.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Mind Collective Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Adaptive Swarm"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 41
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

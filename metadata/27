@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #27 - Warped Plane",
+  "description": "A flat world twisted into relief—surface tension reshaping geometry.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/warped-plane.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dimensional Continuum Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Warped Plane"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 27
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

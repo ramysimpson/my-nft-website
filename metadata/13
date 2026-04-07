@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #13 - Ethereum Spirit",
+  "description": "A spectral guardian of the network—secure, omnipresent, composable.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/etherium-spirit.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Ethereum Spirit"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 13
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

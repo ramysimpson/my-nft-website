@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #9 - Fiat Currency Museum",
+  "description": "Fiat money displayed behind glass like an artifact—an exhibit from a fading era.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/fiat-currency.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Fiat Currency Museum"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 9
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

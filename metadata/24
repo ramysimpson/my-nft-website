@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #24 - Inward Arc",
+  "description": "Curvature collapsing toward a center—space folding back on itself.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/inward-arc.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dimensional Continuum Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Inward Arc"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 24
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

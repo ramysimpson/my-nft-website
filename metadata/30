@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #30 - Infinite Ribbons",
+  "description": "Unbroken loops of current weaving through space—motion without beginning or end.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/infinte-ribbons.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Infinite Ribbons"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 30
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

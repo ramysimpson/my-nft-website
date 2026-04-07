@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #5 - Symphony of Dark Matter",
+  "description": "An unseen orchestra shaping galaxies, rendered as ripples of hidden mass.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/symphony-of-dark-matter.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Symphony of Dark Matter"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 5
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

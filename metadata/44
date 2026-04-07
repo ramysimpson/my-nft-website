@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #44 - Resonant Plane",
+  "description": "A shared surface humming with signals—coherence achieved through resonance.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/resonant-plane.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Mind Collective Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Resonant Plane"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 44
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

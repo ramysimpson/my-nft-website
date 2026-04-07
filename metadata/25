@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #25 - Singularity Convergence",
+  "description": "Every vector pulled to a single point—time, space, and matter tightening together.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/singularity-convergence.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dimensional Continuum Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Singularity Convergence"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 25
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

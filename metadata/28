@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #28 - Aurora",
+  "description": "Solar wind painted across the magnetosphere in charged ribbons of light.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/aurora.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Aurora"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 28
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

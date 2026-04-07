@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #34 - Rhythmic Pulse",
+  "description": "Metered surges of energy—tempo becoming texture across the frame.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/rhythmic-pulse.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Rhythmic Pulse"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 34
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

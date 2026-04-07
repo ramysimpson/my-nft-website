@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #6 - Invisible Force",
+  "description": "Dark energy accelerating the cosmos—an unseen pressure stretching space itself.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/invisible-force.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Invisible Force"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 6
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

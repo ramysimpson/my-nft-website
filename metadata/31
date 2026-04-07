@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #31 - Luminous Pulse",
+  "description": "Light condensed into beats—each flash a heartbeat of the grid.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/luminous-pulse.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Luminous Pulse"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 31
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

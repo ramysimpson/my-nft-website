@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #47 - Poise",
+  "description": "Suspended motion at the boundary between stillness and release.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/poise.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Nature Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Poise"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 47
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

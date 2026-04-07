@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #22 - Axis Distortion",
+  "description": "Reference lines bending under hidden gravity—geometry under strain.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/axis-distortion.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dimensional Continuum Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Axis Distortion"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 22
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

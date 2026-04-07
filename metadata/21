@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #21 - Aggregation Field",
+  "description": "Data streams coalescing into a dense lattice—information converged into a single coherent flow.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/aggregation-field.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dataverse Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Aggregation Field"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 21
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

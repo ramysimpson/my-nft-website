@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #10 - Crypto Blade",
+  "description": "A razor-sharp emblem of trustless code cutting through legacy rails.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/crypto-blade.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Crypto Blade"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 10
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

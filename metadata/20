@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #20 - Hidden Manifold",
+  "description": "A curved data manifold revealed—where folded structure exposes hidden signal.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/hidden-manifold.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dataverse Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Hidden Manifold"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 20
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

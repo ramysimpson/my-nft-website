@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #14 - Take Your Medicine",
+  "description": "A reminder that volatility is the dose for those who seek freedom in finance.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/take-your-medicine.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Take Your Medicine"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 14
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

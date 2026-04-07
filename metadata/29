@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #29 - Concentric Wave",
+  "description": "Expanding ripples of force—energy radiating evenly from a single impulse.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/concentric-wave.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Concentric Wave"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 29
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

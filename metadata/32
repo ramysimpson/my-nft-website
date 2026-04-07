@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #32 - Neural Strands",
+  "description": "Synaptic filaments firing in tandem—intelligence as living electricity.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/neural-strands.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Neural Strands"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 32
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #40 - Untouched Core",
+  "description": "A protected center held beyond alteration—truth stored in immutable strata.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/untouched-core.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Immutable Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Untouched Core"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 40
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #48 - Veil",
+  "description": "Quiet agent of transformation, muted rather than concealed.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/veil.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Nature Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Veil"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 48
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

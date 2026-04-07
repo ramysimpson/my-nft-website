@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #49 - Descent",
+  "description": "A moment of transition, where brightness begins to withdraw and form yields to tone.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/descent.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Nature Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Descent"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 49
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

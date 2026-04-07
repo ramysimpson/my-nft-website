@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #37 - Locked Recursion",
+  "description": "A loop sealed in code—each iteration inscribed, none ever rewritten.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/locked-recursion.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Immutable Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Locked Recursion"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 37
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #12 - Metaverse Stock Exchange",
+  "description": "A trading floor built from light—liquidity for worlds that run on code.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/metaverse-stock-exchange.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Metaverse Stock Exchange"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 12
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

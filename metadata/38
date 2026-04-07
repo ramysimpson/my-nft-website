@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #38 - Permanent Boundary",
+  "description": "A line that cannot be crossed—an edge etched into ledger stone.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/permanent-boundary.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Immutable Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Permanent Boundary"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 38
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

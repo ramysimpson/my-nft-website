@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #43 - Layered Consciousness",
+  "description": "Stacked perceptions flowing upward—each layer refining signal into thought.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/layered-consciousness.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Mind Collective Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Layered Consciousness"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 43
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

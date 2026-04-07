@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #23 - Continuum Overlap",
+  "description": "Two planes of reality sliding across each other—moments doubled, briefly one.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/continuum-overlap.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dimensional Continuum Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Continuum Overlap"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 23
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

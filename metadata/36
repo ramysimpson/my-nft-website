@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #36 - Irreversible Form",
+  "description": "A shape cast once and forever—change recorded as a permanent state.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/irreversible-form.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Immutable Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Irreversible Form"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 36
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #35 - Volatility Storm",
+  "description": "Lightning in data form—turbulence captured as charged geometry.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/volatility-storm.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Energy Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Volatility Storm"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 35
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

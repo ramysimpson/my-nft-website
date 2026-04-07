@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #45 - Silent Grid",
+  "description": "Quiet nodes awaiting activation—potential intelligence held in perfect stillness.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/silent-grid.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Mind Collective Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Silent Grid"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 45
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

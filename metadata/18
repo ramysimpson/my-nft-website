@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #18 - Quantum Data Strings",
+  "description": "Entangled threads of information vibrating between possibility and signal.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/quantum-data-strings.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dataverse Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Quantum Data Strings"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 18
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

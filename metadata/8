@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #8 - Blockchain Sun",
+  "description": "A glowing metaphor for decentralized infrastructure—radiating outward, powering a new kind of digital gravity.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/blockchain-future.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Blockchain Sun"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 8
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

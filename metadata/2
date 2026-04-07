@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #2 - Event Horizon",
+  "description": "The last visible edge before no information escapes—a boundary between what can be known and what can only be imagined.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/horizon.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Event Horizon"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 2
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

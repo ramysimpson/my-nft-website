@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #17 - Algorithmic Forest",
+  "description": "Code-grown trees branching through probabilistic paths and patterns.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/algorithmic-forest.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dataverse Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Algorithmic Forest"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 17
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

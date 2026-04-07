@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #16 - Matrix Waterfall",
+  "description": "Streams of information cascading into a luminous pool of insight.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/matrix-waterfall.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Dataverse Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Matrix Waterfall"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 16
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

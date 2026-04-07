@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #46 - Érosion",
+  "description": "A restrained study of transition—the precise boundary where solid form yields to time and motion.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/érosion.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Nature Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Érosion"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 46
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

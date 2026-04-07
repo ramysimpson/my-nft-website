@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #50 - Held Horizon",
+  "description": "A small silhouette, fleeting movement against an expansive field of sky.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/held-horizon.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Nature Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Held Horizon"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 50
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

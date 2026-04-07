@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #42 - Distributed Core",
+  "description": "A central will diffused across nodes—intelligence with no single point of failure.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/distributed-core.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Mind Collective Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Distributed Core"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 42
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

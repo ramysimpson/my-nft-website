@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #4 - Black Hole Complementarity",
+  "description": "Two seemingly incompatible perspectives on the same reality, fused into a single visual paradox at the edge of a black hole.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/complientarity.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Black Hole Complementarity"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 4
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

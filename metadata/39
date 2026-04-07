@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #39 - Settled Symmetry",
+  "description": "Balance fixed in place—reflection locked and preserved without decay.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/settled-symmetry.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Immutable Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Settled Symmetry"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 39
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

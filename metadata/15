@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #15 - The Last Bank",
+  "description": "A lone vault dissolving into chains—an artifact of the pre-crypto era.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/the-last-bank.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Crypto Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "The Last Bank"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 15
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}

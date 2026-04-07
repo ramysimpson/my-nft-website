@@ -1,0 +1,23 @@
+{
+  "name": "DelaireauxArt #3 - Cosmic Horizon",
+  "description": "Where the observable universe fades into the unknown—light, distance, and time compressed into a single frame.",
+  "image": "ipfs://bafybeihztwgzyckmchifub66yksnmca6lg6en33gxjlgu27wdqgiy2xv7a/cosmic-horizon.png",
+  "attributes": [
+    {
+      "trait_type": "Series",
+      "value": "Cosmic Series"
+    },
+    {
+      "trait_type": "Artwork",
+      "value": "Cosmic Horizon"
+    },
+    {
+      "trait_type": "Token ID",
+      "value": 3
+    },
+    {
+      "trait_type": "Medium",
+      "value": "Digital Art"
+    }
+  ]
+}
