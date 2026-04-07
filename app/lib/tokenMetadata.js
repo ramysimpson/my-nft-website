@@ -1,9 +1,4 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
-
-function getMetadataPath(tokenId) {
-  return path.join(process.cwd(), "metadata", String(tokenId));
-}
+import { TOKEN_METADATA } from "./tokenMetadataData.js";
 
 function imageUrlFromMetadataImage(image) {
   if (!image) return null;
@@ -13,12 +8,15 @@ function imageUrlFromMetadataImage(image) {
 }
 
 export async function getTokenMetadata(tokenId) {
-  const filePath = getMetadataPath(tokenId);
-  const raw = await readFile(filePath, "utf8");
-  const metadata = JSON.parse(raw);
+  const normalizedTokenId = String(tokenId);
+  const metadata = TOKEN_METADATA[normalizedTokenId];
+
+  if (!metadata) {
+    throw new Error(`Token metadata not found for token ${normalizedTokenId}`);
+  }
 
   return {
-    tokenId: Number(tokenId),
+    tokenId: Number(normalizedTokenId),
     ...metadata,
     localImageUrl: imageUrlFromMetadataImage(metadata.image),
   };
